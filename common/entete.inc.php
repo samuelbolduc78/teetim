@@ -1,3 +1,12 @@
+<?php
+//lire le fichier json contenant les texte
+$txtJSON = file_get_contents('e18n\txt-fr.json');
+//test
+echo $txtJSON;
+//convertir le json en tableau associatif struct php
+$txtArray = json_decode($txtJSON, true);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,8 +16,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>teeTIM // fibre naturelle ... conception artificielle</title>
-    <meta name="description" content="Page d'accueil du concepteur de vêtements 100% fait au Québec, conçus par les étudiants du TIM à l'aide de designs produits par intelligence artificielle, et fabriqués avec des fibres 100% naturelles et biologiques.">
+    <title></title>
+    <meta name="description" content="">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" href="images/favicon.png" />
 </head>
@@ -24,16 +33,16 @@
                 <label for="cc-btn-responsive" class="material-icons burger">menu</label>
                 <a class="logo" href="index.php"><img src="images/logo.png" alt="Accueil"></a>
                 <a class="material-icons panier" href="panier.php">shopping_cart</a>
-                <input class="recherche" type="search" name="motscles" placeholder="Recherche">
+                <input class="recherche" type="search" name="motscles" placeholder="">
             </nav>
             <input type="checkbox" id="cc-btn-responsive">
             <nav class="principale">
                 <label for="cc-btn-responsive" class="menu-controle material-icons">close</label>
-                <a href="teeshirts.php">Teeshirts</a>
-                <a href="casquettes.php">Casquettes</a>
-                <a href="hoodies.php">Hoodies</a>
+                <a href="teeshirts.php"></a>
+                <a href="casquettes.php"></a>
+                <a href="hoodies.php"></a>
                 <span class="separateur"></span>
-                <a href="aide.php">Aide</a>
-                <a href="apropos.php">À propos de nous</a>
+                <a href="aide.php"></a>
+                <a href="apropos.php"></a>
             </nav>
         </header>
