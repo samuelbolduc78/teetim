@@ -1,10 +1,32 @@
 <?php
+//choix langue=
+//un par defaut == fr
+print_r($_GET);
+$langue = "fr";
+//afficher les param url(querystring)
+if(isset($_GET['lang'])) {
+    $langue = $_GET["lang"];
+}
+//choix 2 = en
+//utilisateur clic sur bouton langue, chnager la variable au code de langue selectionne
 //lire le fichier json contenant les texte
-$txtJSON = file_get_contents('e18n\txt-fr.json');
+
+//si util a fait choix langue par un choix de langue par le passer, garder ce choix de langue (temoin http ou cookies) alors changer var au code de langue sauvegarder
+$txtJSON = file_get_contents('e18n\txt-' . $langue . '.json');
 //test
-echo $txtJSON;
 //convertir le json en tableau associatif struct php
-$txtArray = json_decode($txtJSON, true);
+$txtArray = json_decode($txtJSON);
+
+// echo $txtArray->acceuil->amorceH2;
+//creer qulqu raccourcie pour section 
+//tt les texte specifique contenue page
+//var page existe dans contexte car definie avant inclusion de ce fichier
+$_ = $txtArray -> $page;
+//raccourcie : txt entete
+$_ent = $txtArray -> entete;
+
+$_p2p = $txtArray -> p2p;
+
 ?>
 
 <!DOCTYPE html>
@@ -25,9 +47,8 @@ $txtArray = json_decode($txtJSON, true);
     <div class="conteneur">
         <header>
             <nav class="barre-haut">
-                <a class="actif" href="#">fr</a>
-                <a href="#">en</a>
-                <a href="#">es</a>
+                <a class="" href="index.php?lang=fr">fr</a>
+                <a class="" href="index.php?lang=en">en</a>
             </nav>
             <nav class="barre-logo">
                 <label for="cc-btn-responsive" class="material-icons burger">menu</label>
@@ -38,11 +59,11 @@ $txtArray = json_decode($txtJSON, true);
             <input type="checkbox" id="cc-btn-responsive">
             <nav class="principale">
                 <label for="cc-btn-responsive" class="menu-controle material-icons">close</label>
-                <a href="teeshirts.php"></a>
-                <a href="casquettes.php"></a>
-                <a href="hoodies.php"></a>
+                <a href="teeshirts.php"><?= $_ent->NavPeincipale->navTee; ?></a>
+                <a href="casquettes.php"><?= $_ent->NavPeincipale->navCasquette; ?></a>
+                <a href="hoodies.php"><?= $_ent->NavPeincipale->navHoodie; ?></a>
                 <span class="separateur"></span>
-                <a href="aide.php"></a>
-                <a href="apropos.php"></a>
+                <a href="aide.php"><?= $_ent->NavPeincipale->navAide; ?></a>
+                <a href="apropos.php"><?= $_ent->NavPeincipale->navAPropos; ?></a>
             </nav>
         </header>

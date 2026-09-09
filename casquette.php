@@ -1,19 +1,14 @@
 <?php
-$page = "teesh";
-
 //inclure le ficihier commun contenant le haut du cide des ecrans des ui
 include_once('common/entete.inc.php');
- /** @var stdClass $_ */
-
-//documenter (avec phpdoc) les variables $_ pour aider intelliphent avec les hint de code
-
+$page = "casquettes";
 ?>
-        <main class="page-teeshirts">
+        <main class="page-casquettes">
             <article class="amorce">
-                <h1><?= $_->amorceH1; ?></h1>
+                <h1>Nos casquettes</h1>
             </article>
             <article class="principal">
-                <?= $_->enConstruction; ?>
+                À venir...
             </article>
         </main>
 <?php
