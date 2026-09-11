@@ -1,13 +1,14 @@
  <footer>
+    
             <h2>teeTIM</h2>
             <div class="contenu">
                 <section class="achats">
-                    <h3>Vos achats</h3>
+                    <h3><?=  $_p2p->achat->titre;?></h3>
                     <nav>
-                        <a href="faq.php" class="faq">Foire aux questions</a>
-                        <a href="livraison.php" class="livraison">Livraison de votre colis</a>
-                        <a href="conditions.php" class="conditions">Conditions de vente</a>
-                        <a href="confidentialite.php" class="confidentialite">Politique de confidentialité</a>
+                        <a href="faq.php" class="faq"><?= $_p2p->achat->navFaq; ?></a>
+                        <a href="livraison.php" class="livraison"><?= $_p2p->achat->navLivraison; ?></a>
+                        <a href="conditions.php" class="conditions"><?= $_p2p->achat->navCondition; ?></a>
+                        <a href="confidentialite.php" class="confidentialite"><?= $_p2p->achat->navConfid; ?></a>
                     </nav>
                 </section>
                 <section class="apropos">

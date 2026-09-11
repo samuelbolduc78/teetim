@@ -2,13 +2,15 @@
 //inclure le ficihier commun contenant le haut du cide des ecrans des ui
 include_once('common/entete.inc.php');
 $page = "casquettes";
+// ajouter une annotation pour aider intelliphent signifier que la variable $_ est de type stdClass et existe
+/** @var stdClass $_ */
 ?>
         <main class="page-casquettes">
             <article class="amorce">
-                <h1>Nos casquettes</h1>
+                <h1><?= $_->amorceH1 ?>  </h1>
             </article>
             <article class="principal">
-                À venir...
+                <p><?= $_->enConstruction ?></p>
             </article>
         </main>
 <?php

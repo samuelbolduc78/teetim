@@ -1,11 +1,17 @@
 <?php
 //choix langue=
 //un par defaut == fr
-print_r($_GET);
-$langue = "fr";
+//voir parametre de la requete http GET (querystring) pour savoir si l'utilisateur a fait un choix de langue
+// echo $_GET['connecter'];
+$langue = 'fr';
+if(isset($_COOKIE['teetimgr1langchoisie'])) {
+    $langue =$_COOKIE['teetimgr1langchoisie'];
+}
 //afficher les param url(querystring)
 if(isset($_GET['lang'])) {
     $langue = $_GET["lang"];
+    /// memoriser ce choix dans un temoin http
+    setcookie("teetimgr1langchoisie", $langue, time()+365*24*60*60); //7 jours
 }
 //choix 2 = en
 //utilisateur clic sur bouton langue, chnager la variable au code de langue selectionne
@@ -47,8 +53,8 @@ $_p2p = $txtArray -> p2p;
     <div class="conteneur">
         <header>
             <nav class="barre-haut">
-                <a class="" href="index.php?lang=fr">fr</a>
-                <a class="" href="index.php?lang=en">en</a>
+                <a class="<?php if($langue==='fr') {echo 'actif';}else {echo '';} ?>" href="?lang=fr">fr</a>
+                <a class="<?php if($langue==='en') {echo 'actif';}else {echo '';} ?>" href="?lang=en">en</a>
             </nav>
             <nav class="barre-logo">
                 <label for="cc-btn-responsive" class="material-icons burger">menu</label>
