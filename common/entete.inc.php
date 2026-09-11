@@ -36,7 +36,7 @@ $_p2p = $txtArray -> p2p;
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr"> //exo inverser entete dir = ltr
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
