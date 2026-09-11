@@ -55,6 +55,8 @@ $_p2p = $txtArray -> p2p;
             <nav class="barre-haut">
                 <a class="<?php if($langue==='fr') {echo 'actif';}else {echo '';} ?>" href="?lang=fr">fr</a>
                 <a class="<?php if($langue==='en') {echo 'actif';}else {echo '';} ?>" href="?lang=en">en</a>
+                                <a class="<?php if($langue==='ar') {echo 'actif';}else {echo '';} ?>" href="?lang=ar">ar</a>
+
             </nav>
             <nav class="barre-logo">
                 <label for="cc-btn-responsive" class="material-icons burger">menu</label>
